@@ -1,0 +1,31 @@
+openapi: 3.0.0
+info:
+  title: Meta Ads GPT Connector API
+  version: 1.0.0
+paths:
+  /query:
+    post:
+      summary: Ask a question about Meta Ads account performance
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                adAccountId:
+                  type: string
+                  description: "Meta Ads Account ID (e.g., act_123456789)"
+                question:
+                  type: string
+                  description: "Question about Meta Ads performance"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
